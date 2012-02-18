@@ -41,3 +41,5 @@ gem 'sorcery' # authentication
 gem 'cancan' # permissions
 gem 'paper_trail', '~> 2' # objects history
 
+gem 'execjs'
+gem 'therubyracer'

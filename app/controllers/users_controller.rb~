@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   def create
     # prends tous les params accesible de user (attr_accessible), affectation de masse
     @user = User.new(params[:user])
-    
+    @user.update_attributes(params[:user][:name])
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

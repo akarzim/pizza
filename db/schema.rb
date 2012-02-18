@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130093052) do
+ActiveRecord::Schema.define(:version => 20120218163417) do
 
   create_table "commandes", :force => true do |t|
     t.integer  "user_id"
@@ -51,11 +51,6 @@ ActiveRecord::Schema.define(:version => 20120130093052) do
 
   add_index "pizzs", ["ingredients_id"], :name => "index_pizzs_on_ingredients_id"
 
-  create_table "sessions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email",                           :null => false
     t.string   "crypted_password"
@@ -67,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120130093052) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "name"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
