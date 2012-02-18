@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @pizz.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @pizz.price %>
+</p>
+
+<p>
+  <b>Ingredients:</b>
+  <%= @pizz.ingredients.map(&:name).join(', ') %>
+</p>
+
+
+<%= link_to 'Edit', edit_pizz_path(@pizz) %> |
+<%= link_to 'Back', pizzs_path %>

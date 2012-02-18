@@ -1,0 +1,21 @@
+<h1>Listing pizzaparties</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pizzaparties.each do |pizzaparty| %>
+  <tr>
+    <td><%= link_to 'Show', pizzaparty %></td>
+    <td><%= link_to 'Edit', edit_pizzaparty_path(pizzaparty) %></td>
+    <td><%= link_to 'Destroy', pizzaparty, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pizzaparty', new_pizzaparty_path %>
