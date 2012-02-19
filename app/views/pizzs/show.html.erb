@@ -12,7 +12,34 @@
 
 <p>
   <b>Ingredients:</b>
-  <%= @pizz.ingredients.map(&:name).join(', ') %>
+
+  <% 
+# map pour la liste déroulante à décommenter pour voir
+# ingredients_array = @pizz.ingredients.map { |ingredient| [ingredient.name, ingredient] } 
+%>
+<%= 
+# la liste déroulante à décommenter pour voir
+#select_tag(:ingredients,options_for_select(ingredients_array)) 
+%>
+
+
+<ul class="checkbox-list">
+    <% for  ingr in Ingredient.all %>
+        <% 
+if @pizz.ingredients.include?(ingr)
+%><li> <%=
+check_box_tag "pizz[ingredient_ids][]", "#{ingr.id}",true ,  :disabled => true
+ingr.name %>
+</li>
+<% end %>
+ 
+  <% end -%>
+</ul>
+
+
+ <% 
+#= @pizz.ingredients.map(&:name).join(', ') 
+%>
 </p>
 
 

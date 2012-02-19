@@ -22,7 +22,7 @@
   <div class="field">
     Ingredients<br/>
     <% for  ingr in Ingredient.all %>
-        <label><%= check_box_tag "pizz[ingredient_ids][]", "#{ingr.id}", @pizz.ingredients.include?(ingr) ? true : false %><%= ingr.name %></label>
+        <label><%= check_box_tag "pizz[ingredient_ids][]", "#{ingr.id}", @pizz.ingredients.include?(ingr) %><%= ingr.name %></label>
     <% end %>
   </div>
   <div class="actions">
