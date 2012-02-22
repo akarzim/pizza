@@ -1,7 +1,0 @@
-class Ingredient < ActiveRecord::Base
-  # un ingrédient peut avoir plusieurs pizza
-  has_and_belongs_to_many :pizzs
-  
-  # vérification (validates) le nom de l'ingrédient est unique et non sensible à la cast.
-  validates :name, :uniqueness => { :case_sensitive => false }
-end

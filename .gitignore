@@ -14,5 +14,7 @@
 /log/*.log
 /tmp
 
-# Gemfile.lock
 ./Gemfile.lock
+*~
+.DS_Store
+backups/*
