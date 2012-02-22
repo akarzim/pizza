@@ -1,27 +1,31 @@
-<h1>Listing pizzs</h1>
+<% content_for :title do %>New Pizza<% end %>
 
-<table>
+<table class="table table-striped">
+ <thead>
   <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Ingredients</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>ID</th>
+        <th>
+      <%= t("activerecord.attributes.pizz.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+    </th>
+        <th>Created at</th>
+    <th>Actions</th>
   </tr>
-
-<% @pizzs.each do |pizz| %>
-  <tr>
-    <td><%= pizz.name %></td>
-    <td><%= pizz.price %></td>
-    <td><%= pizz.ingredients.map(&:name).join(', ') %></td>
-    <td><%= link_to 'Show', pizz %></td>
-    <td><%= link_to 'Edit', edit_pizz_path(pizz) %></td>
-    <td><%= link_to 'Destroy', pizz, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+  <% @pizzs.each do |pizz| -%>
+   <tr>
+    <td><%= pizz.id %></td>
+        <td><%= link_to pizz.name, pizz_path(pizz) %>
+    </td>
+        <td><%= pizz.created_at %></td>
+    <td>
+      <%= link_to "Show", pizz_path(pizz) %>
+      <%= link_to "Edit", edit_pizz_path(pizz) %>
+      <%= link_to "Destroy", pizz_path(pizz), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+    </td>
+    </tr>
+    <% end -%>
+   </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Pizz', new_pizz_path %>
+<%= link_to "New", new_pizz_path, :class => 'btn btn-primary' %>

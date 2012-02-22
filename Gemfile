@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.0'
 
@@ -40,6 +40,9 @@ gem 'jquery-rails'
 gem 'sorcery' # authentication
 gem 'cancan' # permissions
 gem 'paper_trail', '~> 2' # objects history
+gem 'twitter-bootstrap-rails', git: 'git://github.com/keysen/twitter-bootstrap-rails.git', submodules: true
+gem 'formtastic'
+gem 'formtastic-bootstrap', git: 'git://github.com/cgunther/formtastic-bootstrap.git', branch: 'bootstrap-2'
 
 gem 'execjs'
 gem 'therubyracer'

@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @ingredient.name %>
-</p>
+<label class="label"><%= t("activerecord.attributes.ingredient.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</label>
+<p><%= @ingredient.name %></p>
 
-
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+<div class="form-actions">
+<%= link_to "Back", ingredients_path, :class => 'btn'  %>
+<%= link_to "Edit", edit_ingredient_path(@ingredient), :class => 'btn' %>
+<%= link_to "Delete", ingredient_path(@ingredient), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+</div>
