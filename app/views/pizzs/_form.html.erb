@@ -2,10 +2,25 @@
     <%= f.semantic_errors %>
 
     <%= f.input :name %>
-    <%= f.input :price %>
     <%= f.input :ingredients, :as => :check_boxes %>
 
+
+    <p>Sizes <br/>
+      <p><% Size.find(:all).each do |sz| %>
+      <%= sz.label %>
+      <%= semantic_fields_for :prices do |pr| %>
+      <%= pr.inputs :amount, :size => sz %>
+      <% end %>
+      <% end %>
+</p></p>
+  
+
+
+
+
+
     <%= f.buttons do %>
-        <%= f.commit_button %>
+    <%= f.commit_button %>
+      
     <% end %>
 <% end %>

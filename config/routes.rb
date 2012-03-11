@@ -1,4 +1,8 @@
 Pizza::Application.routes.draw do
+  resources :sizes
+
+  resources :prices
+
   resources :commandes
 
   resources :pizzaparties

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218163417) do
+ActiveRecord::Schema.define(:version => 20120311181958) do
 
   create_table "commandes", :force => true do |t|
     t.integer  "user_id"
@@ -43,13 +43,26 @@ ActiveRecord::Schema.define(:version => 20120218163417) do
 
   create_table "pizzs", :force => true do |t|
     t.string   "name"
-    t.decimal  "price"
     t.integer  "ingredients_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
   add_index "pizzs", ["ingredients_id"], :name => "index_pizzs_on_ingredients_id"
+
+  create_table "prices", :force => true do |t|
+    t.float    "amount"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "pizz_id"
+    t.integer  "size_id"
+  end
+
+  create_table "sizes", :force => true do |t|
+    t.string   "label"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                           :null => false

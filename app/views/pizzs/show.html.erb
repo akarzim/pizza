@@ -2,8 +2,6 @@
 <label class="label"><%= t("activerecord.attributes.pizz.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</label>
 <p><%= @pizz.name %></p>
 
-<label class="label"><%= t("activerecord.attributes.pizz.price", :default => t("activerecord.labels.price", :default => "Price")) %>:</label>
-<p><%= @pizz.price %></p>
 
 <label class="label"><%= t("activerecord.attributes.pizz.ingredients_id", :default => t("activerecord.labels.ingredients_id", :default => "Ingredients")) %>:</label>
 <p><% @pizz.ingredients.each do |ingr| -%><%= ingr.name %>, <% end -%></p>
