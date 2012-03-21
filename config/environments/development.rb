@@ -34,4 +34,6 @@ Pizza::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+ # config.threadsafe! unless $rails_rake_task
+ # config.dependency_loading = true
 end

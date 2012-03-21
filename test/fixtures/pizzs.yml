@@ -1,11 +1,171 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+pino:
+  name: pino 
   price: 9.99
-  ingredients: 
+  ingredients: tomates, thon, epaule, chorizo, artichaut, champignons, mozzarella
 
-two:
-  name: MyString
+reine:
+  name: reine
   price: 9.99
-  ingredients: 
+  ingredients: tomates, champignons, epaule, mozzarella
+
+marcquoise:
+  name: marcquoise
+  ingredients: tomates, epaule, champignons, oignons, olives, gruyere
+
+siciliene:
+  name: siciliene
+  ingredients: tomates, poivrons, chorizo, mozzarella
+
+calabrese:
+  name: calabrese
+  ingredients: tomates, thon, capres, anchois, mozzarella
+
+oignon:
+  name: oignon
+  ingredients: tomates, oignons, gruyere
+
+jambon:
+  name: jambon
+  ingredients: tomates, épaule, mozzarella
+
+margherita:
+  name: margherita
+  ingredients: tomates, mozzarella
+
+fdm:
+  name: fruits de mer
+  ingredients: tomates, fdm, gruyere
+
+napolitaine:
+  name: napolitaine
+  ingredients: tomates, olives, capres, anchois, mozzarella
+
+europeenne:
+  name: europeenne
+  ingredients: tomates, thon, champignons, epaule, artichaut, oignons, chorizo, poivrons, mozzarella
+
+gorgonzola:
+  name: gorgonzola
+  ingredients: tomates, gorgonzola, gruyere
+
+capri:
+  name: capri
+  ingredients: tomates, chorizo, oignons, oeuf, mozzarella
+
+merguez:
+  name: merguez
+  ingredients: tomates, merguez, oignons, fromage
+
+hellemmoise:
+  name: hellemmoise
+  ingredients: tomates, epaule, champignons, oignons, oeuf, gruyere
+
+thon:
+  name: thon
+  ingredients: tomates, thon, gruyere
+
+bolognaise:
+  name: bolognaise
+  ingredients: sauce bolognaise, mozzarella
+
+tourquenoise:
+  name: tourquenoise
+  ingredients: thon, chorizo, gorgonzola, gruyere, oignons, tomates
+
+tf:
+  name: trois fromages
+  ingredients: gruyere, gorgonzola, mozzarella, tomates
+
+chevre:
+  name:chevre 
+  ingredients: gruyere, tomates, chevre
+
+toscana:
+  name: toscana
+  ingredients: epaule, champignons, parmesan, cf
+
+savoiardi:
+  name: savoiardi
+  ingredients: cf, gruyere, oignons, pdt, reblochon, lardons
+
+sa:
+  name: saint aygulf
+  ingredients: tomates, chorizo, gruyere, epaule, champignons, merguez, oeuf
+
+dm:
+  name: del maestro
+  ingredients: tomates, chorizo, epaule, champignons, mozzarella, chevre, poivrons
+
+zio:
+  name: zio
+  ingredients: tomates, lardons, oignons, mozzarella, oeuf, olives, poivrons
+
+maroilles:
+  name: maroilles
+  ingredients: tomates, gruyere, maroilles
+
+carbonara:
+  name: carbonara
+  ingredients: cf, lardons, mozzarella
+
+lilloise:
+  name: lilloise
+  ingredients: vl, lardons, oignons, gruyere, oeuf, cf
+
+loossoise:
+  name: loossoise
+  ingredients: tomates, oeuf, oignons, gorgonzola, champignons, gruyere
+
+lommoise:
+  name: lommoise
+  ingredients: bolognaise, gruyere, oeuf, oignons, merguez
+
+hawai:
+  name: hawaï
+  ingredients: tomates, gruyere, epaule, ananas, cf
+
+wattignisienne:
+  name: wattignisienne
+  ingredients: cf, champignons, chorizo, gruyere, oignons, gorgonzola, oeuf
+
+villeneuveoise:
+  name: villeneuveoise
+  ingredients: tomates, chorizo, merguez, oeuf, gruyere, oignons
+
+armentieroise:
+  name: armentieroise
+  ingredients: cf, epaule, champignons, gruyere, oignons, chevre, oeuf
+
+andresienne:
+  name: andresienne
+  ingredients: cf, gruyere, gorgonzola, chevre, lardons, oeuf
+
+stj:
+  name: saint jacques
+  ingredients: tomates, stj, gruyere, cf
+
+saumon:
+  name: saumon
+  ingredients: tomates, saumon, gruyère, cf 
+
+peperoni:
+  name: peperoni
+  ingredients: tomates, peperoni, gruyere, oignons
+
+annappoise:
+  name: annappoise
+  ingredients: tomates, epaule, chorizo, parmesan, gorgonzola, oeuf, merguez
+
+vegetarienne:
+  name: vegetarienne
+  ingredients: tomates, oignons, artichaut, poivrons, olives, champignons, mozzarella
+
+sta:
+  name: Saint Adrien
+  ingredients: cf, epaule, mozzarella, parmesan, chorizo, merguez, gorgonzola, poivron
+
+wattrelosienne:
+  name: wattrelosienne
+  ingredients: tomates, chorizo, thon, gruyere, oignons, lardons, merguez, gorgonzola

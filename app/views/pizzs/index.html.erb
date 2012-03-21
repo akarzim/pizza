@@ -7,6 +7,7 @@
         <th>
       <%= t("activerecord.attributes.pizz.name", :default => t("activerecord.labels.name", :default => "Name")) %>
     </th>
+    <th>prices (in euro)</th>
         <th>Created at</th>
     <th>Actions</th>
   </tr>
@@ -17,6 +18,7 @@
     <td><%= pizz.id %></td>
         <td><%= link_to pizz.name, pizz_path(pizz) %>
     </td>
+    <td><%= pizz.prices.collect{|price| price.amount}.join(", ")%></td>
         <td><%= pizz.created_at %></td>
     <td>
       <%= link_to "Show", pizz_path(pizz) %>

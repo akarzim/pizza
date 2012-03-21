@@ -1,7 +1,63 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+tomates:
+ name: tomates
+thon:
+ name: thon
+epaule:
+ name: épaule
+chorizo:
+ name: chorizo
+artichaut:
+ name: artichaut
+champignons:
+ name: champignons
+mozzarella:
+ name: mozzarella
+ognons:
+ name: ognons
+olives:
+ name: olives
+gruyere:
+ name: gruyère
+fdm:
+ name: assortiment de fruits de mer
+capres:
+ name: câpres
+anchois:
+ name: anchois
+poivrons:
+ name: poivrons
+gorgonzola:
+ name: gorgonzola
+merguez:
+ name: merguez
+oeuf:
+ name: oeuf 
+fromage:
+ name: fromage
+sb:
+ name: sauce bolognaise
+parmesan
+ name: parmesan
+cf:
+  name: crème fraîche
+pdt:
+  name: pommes de terre
+reblochon:
+  name: reblochon
+lardons:
+  name: lardons
+maroilles:
+  name: maroilles
+vl:
+  name: vieux Lille
+ananas:
+  name: ananas
+stj:
+  name: st jacques
+saumon:
+  name: saumon
+peperoni:
+  name: pépéroni
 
-two:
-  name: MyString

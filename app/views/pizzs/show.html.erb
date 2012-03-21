@@ -2,9 +2,16 @@
 <label class="label"><%= t("activerecord.attributes.pizz.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</label>
 <p><%= @pizz.name %></p>
 
+<div class="label">Prices</div>
+<p>
+<% @pizz.prices.each do |price| -%>
+  <%= price.size.label %>, <%= price.amount %> euro <br>
+<% end -%>
+</p>
 
-<label class="label"><%= t("activerecord.attributes.pizz.ingredients_id", :default => t("activerecord.labels.ingredients_id", :default => "Ingredients")) %>:</label>
-<p><% @pizz.ingredients.each do |ingr| -%><%= ingr.name %>, <% end -%></p>
+
+<div class="label"><%= t("activerecord.attributes.pizz.ingredients_id", :default => t("activerecord.labels.ingredients_id", :default => "Ingredients")) %>:</div>
+<p><%= @pizz.ingredients.collect{|ingredient| ingredient.name }.join(', ') %></p>
 
 <div class="form-actions">
 <%= link_to "Back", pizzs_path, :class => 'btn'  %>
