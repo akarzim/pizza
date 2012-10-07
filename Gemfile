@@ -1,48 +1,67 @@
-source 'http://rubygems.org'
+source :rubygems
 
-gem 'rails', '3.2.0'
+gem "rails",                                              "~>3.2"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem "pg",                                                 "~>0.13"
+gem "sqlite3",                                            "~>1.3"
 
-gem 'sqlite3'
+gem "haml",                                               "~>3.1"
+gem "sorcery",                                            "~>0.7"
+# gem "foreigner",                                          "~>1.1"
+# gem "carrierwave",                                        "~>0.5"
+# gem "mini_magick",                                        "~>3.4"
+gem "paper_trail",                                        "~>2.6"
+# gem "squeel",                                             "~>1.0"
+gem "formtastic",                                         "~>2.2"
+gem "formtastic-bootstrap",                               git: "git@github.com:keysen/formtastic-bootstrap.git"
+gem "cancan",                                             "~>1.6"
+# gem "kaminari",                                           "~>0.13"
+# gem "friendly_id",                                        "~>4.0"
+gem "sass-rails",                                         "~>3.2"
+# gem "ttfunk"
+# gem "prawn"
+# gem 'rb-inotify',                                         '~>0.8'
+# gem 'deep_cloneable',                                     '~>1.4'
+# gem "sentient_user",                                      '~>0.3'
 
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
+  gem "sass",                                             "~>3.2"
+  gem "bootstrap-sass",                                   git: "git://github.com/dszczyt/bootstrap-sass.git"
+  gem "font-awesome-rails",                               "~>0.4"
+  gem "coffee-rails",                                     "~>3.2"
+  gem "therubyracer",                                     "~>0.9", require: "v8"
+  gem "uglifier",                                         "~>1.0"
 end
 
-gem 'jquery-rails'
+#group :test, :development do
+  # gem "simplecov",                                        require: false
+  # gem "guard"
+  # gem "libnotify"
+  # gem "guard-annotate"
+  # gem "guard-test"
+  # gem "guard-bundler"
+  # gem "awesome_print"
+  # gem "ruby-prof"
+  # gem "railroad"
+#end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem "haml-rails"
+  gem "annotate",                                         "~>2.5"
+  # gem "jquery-rails",                                     "~>2.1"
+  # gem "pry-rails"
+  # gem "hirb"
+  # gem "interactive_editor"
+  # gem "hpricot"
+  # gem "ruby_parser"
+  # gem "webrick",                                          "~>1.3"
+  # gem "rails-footnotes",                                  "~>3.7"
+  # gem "i18n_generators"
+  # gem "capistrano"
+  # gem "capistrano-recipes" #,                               :source => "http://gemcutter.com"
+  # gem "rvm-capistrano"
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-gem 'sorcery' # authentication
-gem 'cancan' # permissions
-gem 'paper_trail', '~> 2' # objects history
-gem 'twitter-bootstrap-rails', git: 'git://github.com/keysen/twitter-bootstrap-rails.git', submodules: true
-gem 'formtastic'
-gem 'formtastic-bootstrap', git: 'git://github.com/cgunther/formtastic-bootstrap.git', branch: 'bootstrap-2'
-
-gem 'execjs'
-gem 'therubyracer'
+group :test do
+  gem "factory_girl_rails",                               "~>4.0"
+end

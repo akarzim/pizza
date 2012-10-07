@@ -1,20 +1,19 @@
+# encoding: utf-8
 Pizza::Application.routes.draw do
-  resources :sizes
-
-  resources :prices
-
-  resources :commandes
-
-  resources :pizzaparties
-
-  resources :pizzs
-  resources :ingredients
+  resources(
+    :users,
+    :sessions,
+    :sizes,
+    :prices,
+    :commandes,
+    :pizzaparties,
+    :pizzs,
+    :ingredients,
+  )
 
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'login' => 'sessions#new', :as => :login
   get 'signup' => 'users#new', :as => :signup
-  resources :users
-  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -65,7 +64,7 @@ Pizza::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => redirect("/login")
 
   # See how all your routes lay out with "rake routes"
 

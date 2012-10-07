@@ -87,7 +87,7 @@ Rails.application.config.sorcery.configure do |config|
                                                                                       # until an encrypted one is
                                                                                       # generated.
 
-    # user.downcase_username_before_authenticating = false                            # downcase the username before
+    user.downcase_username_before_authenticating = true                            # downcase the username before
                                                                                       # trying to authenticate, default
                                                                                       # is false
 

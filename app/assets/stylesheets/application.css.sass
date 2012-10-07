@@ -1,0 +1,39 @@
+/*
+ *= require_self
+ *= require formtastic-bootstrap
+ *= require font-awesome
+ */
+
+@import custom_bootstrap
+@import flags
+
+body, html
+  // FIX: Firefox font differs from Google Chrome
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+  height: 101%
+
+.masthead
+  padding-top: 70px
+
+.hidden
+  display: none
+
+.navbar
+  .brand
+    padding: 0 1em
+    font-family: serif
+    font-weight: bold
+
+    &:first-letter
+      font-size: 1.5em
+      line-height: 1em
+
+
+// FIX: Bug for webkit users when we use horizontal-form
+legend
+  margin-bottom: 0
+
+form fieldset legend + *
+  -webkit-margin-top-collapse: separate
+  margin-top: 27px
+

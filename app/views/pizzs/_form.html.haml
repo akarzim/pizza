@@ -1,0 +1,15 @@
+= semantic_form_for @pizz, { html: { class: "form-horizontal" } } do |f|
+  = f.semantic_errors
+  = f.input :name
+  = f.input :ingredients, :as => :check_boxes
+
+  %p
+    Sizes
+    %p
+      - Size.all.each do |size_form|
+        = size_form.label
+        = semantic_fields_for :prices do |price_form|
+          = price_form.inputs :amounts, :size => size_form
+
+  = f.actions do
+    = f.action :submit

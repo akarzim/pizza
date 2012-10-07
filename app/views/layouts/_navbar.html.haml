@@ -1,0 +1,53 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      = link_to root_url, class: "brand" do
+        &pi;zza
+
+      .nav-collapse
+        %ul.nav
+          - nav.each do |key, value|
+            %li{class: ("active" if current_nav == key)}= link_to *(value.values)
+
+        %ul.nav.pull-right
+          %li.divider-vertical
+            %li.dropdown
+              = link_to "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
+                %span{class: "flag flag_#{I18n.locale}"}
+                %b.caret
+
+              %ul.dropdown-menu
+                - Pizza::Application.config.LANGUAGES.each do |code, label|
+                  %li{class: ("active" if I18n.locale == code)}
+                    = link_to url_for(locale: code) do
+                      %span{class: "flag flag_#{code}"}
+                      = label
+
+          - if logged_in?
+            %li.dropdown
+              = link_to "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
+                %i.icon-user.icon-white
+                = current_user
+                %b.caret
+
+              %ul.dropdown-menu
+                %li
+                  = link_to root_url do
+                    %i.icon-wrench
+                    Profile settings
+
+                %li.divider
+
+                %li
+                  = link_to logout_url do
+                    %i.icon-off
+                    Log out
+
+          - else
+            %li
+              = link_to login_url do
+                Log in
+
+            %li
+              = link_to new_user_url do
+                Register now !

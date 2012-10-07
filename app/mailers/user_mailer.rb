@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UserMailer < ActionMailer::Base
 
   default from: "notifications@example.com"
@@ -5,7 +6,7 @@ class UserMailer < ActionMailer::Base
   def activation_needed_email(user)
     @user = user
     @url  = "http://0.0.0.0:3000/users/#{user.activation_code}/activate"
-    mail to: user.email, subject: "Welcome to Geniustrade"
+    mail to: user.email, subject: "Welcome to Πzza"
   end
 
   def activation_success_email(user)

@@ -1,0 +1,53 @@
+!!!
+%html
+  %head
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+    %title
+      &pi;zza - #{content_for?(:title) ? yield(:title).downcase : "Pizza"}
+    = favicon_link_tag "favicon.ico", :type => "image/x-icon"
+    = stylesheet_link_tag "application"
+    = yield :extra_stylesheet
+    = csrf_meta_tags
+
+  %body
+    = render "layouts/navbar"
+
+    = yield :top
+
+    .container.masthead
+      .row
+        #body.span12
+          - if flash[:notice]
+            .alert.alert-info
+              %button.close{:type => "button", "data-dismiss" => "alert"}
+                ×
+              %i.icon-info-sign.icon-large
+              = flash[:notice]
+
+          - if flash[:alert]
+            .alert.alert-error
+              %button.close{:type => "button", "data-dismiss" => "alert"}
+                ×
+              %i.icon-exclamation-sign.icon-large
+              = flash[:alert]
+
+          = yield :container_top
+
+          - if content_for? :full_content
+            = yield :full_content
+          - else
+            = yield
+
+      %footer
+        %p &copy; Cocoding 2012
+
+    #modal.modal.hide
+      .modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal"}
+          ×
+        %h3
+      .modal-body
+      .modal-footer
+
+    = javascript_include_tag "application", :debug => Rails.env.development?, :defer => 'defer'
+    = yield :extra_javascript

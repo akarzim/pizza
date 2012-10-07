@@ -1,5 +1,4 @@
-# généré par la gem sorcery pour la gestion des utilisateurs
-
+# encoding: utf-8
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
@@ -8,12 +7,14 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :name
 
-  # vérifier que le nom est présent
-  validates :name, :presence => true
-  
+  validates_presence_of :name
   validates_confirmation_of :password
   validates_presence_of :email
   validates_format_of :email, with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, on: :create
   validates_presence_of :password, on: :create
   validates_uniqueness_of :email
+
+  def to_s
+    name
+  end
 end
