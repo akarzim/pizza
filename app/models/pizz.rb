@@ -2,7 +2,7 @@
 class Pizz < ActiveRecord::Base
 
   # un ingrédient peut avoir plusieurs pizza et et une pizza peut avoir plusieurs ingrédients
-  has_and_belongs_to_many :ingredients
+  has_and_belongs_to_many :toppings
 
   has_many :prices
   has_many :sizes, :through => :prices
@@ -11,13 +11,13 @@ class Pizz < ActiveRecord::Base
   has_many :commandes
   #has_and_belongs_to_many :commandes
 
-  attr_accessible :name, :ingredient_ids
+  attr_accessible :name, :toppings
 
   # vérifier que le nom est présent
   validates_presence_of :name
 
   # vérifier que les ingrédients soient validés également
-  validates_associated :ingredients
+  validates_associated :toppings
 
   accepts_nested_attributes_for :prices
 

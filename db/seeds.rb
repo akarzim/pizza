@@ -6,317 +6,313 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Ingredient.delete_all
-tomates = Ingredient.create(
+Topping.delete_all
+tomates = Topping.create(
  :name => "tomates"
 )
-thon = Ingredient.create(
+thon = Topping.create(
  :name => "thon"
 )
-epaule = Ingredient.create(
+epaule = Topping.create(
   :name => "épaule"
 )
-chorizo = Ingredient.create(
+chorizo = Topping.create(
   :name => "chorizo"
 )
-artichaut = Ingredient.create(
+artichaut = Topping.create(
   :name => "artichaut"
 )
-champignons = Ingredient.create(
+champignons = Topping.create(
   :name => "champignons"
 )
-mozzarella = Ingredient.create(
+mozzarella = Topping.create(
   :name => "mozzarella"
 )
-oignons = Ingredient.create(
+oignons = Topping.create(
   :name => "oignons"
 )
-olives = Ingredient.create(
+olives = Topping.create(
   :name => "olives"
 )
-gruyere = Ingredient.create(
+gruyere = Topping.create(
   :name => "gruyère"
 )
-fdm = Ingredient.create(
+fdm = Topping.create(
   :name => "assortiment de fruits de mer"
 )
-capres = Ingredient.create(
+capres = Topping.create(
   :name => "câpres"
 )
-anchois = Ingredient.create(
+anchois = Topping.create(
   :name => "anchois"
 )
-poivrons = Ingredient.create(
+poivrons = Topping.create(
   :name => "poivrons"
 )
-gorgonzola = Ingredient.create(
+gorgonzola = Topping.create(
   :name => "gorgonzola"
 )
-merguez = Ingredient.create(
+merguez = Topping.create(
   :name => "merguez"
 )
-oeuf = Ingredient.create(
+oeuf = Topping.create(
   :name => "oeuf "
 )
-fromage = Ingredient.create(
+fromage = Topping.create(
   :name => "fromage"
 )
-sb = Ingredient.create(
+sb = Topping.create(
   :name => "sauce bolognaise"
 )
-parmesan = Ingredient.create(
+parmesan = Topping.create(
   :name => "parmesan"
 )
-cf = Ingredient.create(
+cf = Topping.create(
   :name => "crème fraîche"
 )
-pdt = Ingredient.create(
+pdt = Topping.create(
   :name => "pommes de terre"
 )
-reblochon = Ingredient.create(
+reblochon = Topping.create(
   :name => "reblochon"
 )
-lardons = Ingredient.create(
+lardons = Topping.create(
   :name => "lardons"
 )
-maroilles = Ingredient.create(
+maroilles = Topping.create(
   :name => "maroilles"
 )
-vl = Ingredient.create(
+vl = Topping.create(
   :name => "vieux Lille"
 )
-ananas = Ingredient.create(
+ananas = Topping.create(
   :name => "ananas"
 )
-stj = Ingredient.create(
+stj = Topping.create(
   :name => "st jacques"
 )
-saumon = Ingredient.create(
+saumon = Topping.create(
   :name => "saumon"
 )
 
-chevre = Ingredient.create(
+chevre = Topping.create(
   :name => "chèvre"
 )
 
-peperoni = Ingredient.create(
+peperoni = Topping.create(
   :name => "peperoni"
 )
 
 Pizz.delete_all
 pino = Pizz.create(
-  :name => "pino", 
-  :ingredients => [tomates, thon, epaule, chorizo, artichaut, champignons, mozzarella]
+  :name => "pino",
+  :toppings => [tomates, thon, epaule, chorizo, artichaut, champignons, mozzarella]
 )
 
 reine = Pizz.create(
   :name => "reine",
-  :ingredients => [tomates, champignons, epaule, mozzarella]
+  :toppings => [tomates, champignons, epaule, mozzarella]
 )
 
 marcquoise = Pizz.create(
   :name => "marcquoise",
-  :ingredients => [tomates, epaule, champignons, oignons, olives, gruyere]
+  :toppings => [tomates, epaule, champignons, oignons, olives, gruyere]
 )
 
 sicilienne = Pizz.create(
   :name => "siciliene",
-  :ingredients => [tomates, poivrons, chorizo, mozzarella]
+  :toppings => [tomates, poivrons, chorizo, mozzarella]
 )
 
 calabrese = Pizz.create(
   :name => "calabrese",
-  :ingredients => [tomates, thon, capres, anchois, mozzarella]
+  :toppings => [tomates, thon, capres, anchois, mozzarella]
 )
 
 p_oignon = Pizz.create(
   :name => "oignon",
-  :ingredients => [tomates, oignons, gruyere]
+  :toppings => [tomates, oignons, gruyere]
 )
 
 jambon = Pizz.create(
   :name => "jambon",
-  :ingredients => [tomates, epaule, mozzarella]
+  :toppings => [tomates, epaule, mozzarella]
 )
 
 margherita = Pizz.create(
   :name => "margherita",
-  :ingredients => [tomates, mozzarella]
+  :toppings => [tomates, mozzarella]
 )
 
 p_fdm = Pizz.create(
   :name => "fruits de mer",
-  :ingredients => [tomates, fdm, gruyere]
+  :toppings => [tomates, fdm, gruyere]
 )
 
 napolitaine = Pizz.create(
   :name => "napolitaine",
-  :ingredients => [tomates, olives, capres, anchois, mozzarella]
+  :toppings => [tomates, olives, capres, anchois, mozzarella]
 )
 
 europeenne = Pizz.create(
   :name => "europeenne",
-  :ingredients => [tomates, thon, champignons, epaule, artichaut, oignons, chorizo, poivrons, mozzarella]
+  :toppings => [tomates, thon, champignons, epaule, artichaut, oignons, chorizo, poivrons, mozzarella]
 )
 
 p_gorgonzola = Pizz.create(
   :name => "gorgonzola",
-  :ingredients => [tomates, gorgonzola, gruyere]
+  :toppings => [tomates, gorgonzola, gruyere]
 )
 
 capri = Pizz.create(
   :name => "capri",
-  :ingredients => [tomates, chorizo, oignons, oeuf, mozzarella]
+  :toppings => [tomates, chorizo, oignons, oeuf, mozzarella]
 )
 
 p_merguez = Pizz.create(
   :name => "merguez",
-  :ingredients => [tomates, merguez, oignons, fromage]
+  :toppings => [tomates, merguez, oignons, fromage]
 )
 
 hellemmoise = Pizz.create(
   :name => "hellemmoise",
-  :ingredients => [tomates, epaule, champignons, oignons, oeuf, gruyere]
+  :toppings => [tomates, epaule, champignons, oignons, oeuf, gruyere]
 )
 
 p_thon = Pizz.create(
   :name => "thon",
-  :ingredients => [tomates, thon, gruyere]
+  :toppings => [tomates, thon, gruyere]
 )
 
 bolognaise = Pizz.create(
   :name => "bolognaise",
-  :ingredients => [sb, mozzarella]
+  :toppings => [sb, mozzarella]
 )
 
 tourquenoise = Pizz.create(
   :name => "tourquenoise",
-  :ingredients => [thon, chorizo, gorgonzola, gruyere, oignons, tomates]
+  :toppings => [thon, chorizo, gorgonzola, gruyere, oignons, tomates]
 )
 
 tf = Pizz.create(
   :name => "trois fromages",
-  :ingredients => [gruyere, gorgonzola, mozzarella, tomates]
+  :toppings => [gruyere, gorgonzola, mozzarella, tomates]
 )
 
 p_chevre = Pizz.create(
-  :name => "chevre", 
-  :ingredients => [gruyere, tomates, chevre]
+  :name => "chevre",
+  :toppings => [gruyere, tomates, chevre]
 )
 
 toscana = Pizz.create(
   :name => "toscana",
-  :ingredients => [epaule, champignons, parmesan, cf]
+  :toppings => [epaule, champignons, parmesan, cf]
 )
 
 savoiardi = Pizz.create(
   :name => "savoiardi",
-  :ingredients => [cf, gruyere, oignons, pdt, reblochon, lardons]
+  :toppings => [cf, gruyere, oignons, pdt, reblochon, lardons]
 )
 
 sa = Pizz.create(
   :name => "saint aygulf",
-  :ingredients => [tomates, chorizo, gruyere, epaule, champignons, merguez, oeuf]
+  :toppings => [tomates, chorizo, gruyere, epaule, champignons, merguez, oeuf]
 )
 
 dm = Pizz.create(
   :name => "del maestro",
-  :ingredients => [tomates, chorizo, epaule, champignons, mozzarella, chevre, poivrons]
+  :toppings => [tomates, chorizo, epaule, champignons, mozzarella, chevre, poivrons]
 )
 
 zio = Pizz.create(
   :name => "zio",
-  :ingredients => [tomates, lardons, oignons, mozzarella, oeuf, olives, poivrons]
+  :toppings => [tomates, lardons, oignons, mozzarella, oeuf, olives, poivrons]
 )
 
 p_maroilles = Pizz.create(
   :name => "maroilles",
-  :ingredients => [tomates, gruyere, maroilles]
+  :toppings => [tomates, gruyere, maroilles]
 )
 
 carbonara = Pizz.create(
   :name => "carbonara",
-  :ingredients => [cf, lardons, mozzarella]
+  :toppings => [cf, lardons, mozzarella]
 )
 
 lilloise = Pizz.create(
   :name => "lilloise",
-  :ingredients => [vl, lardons, oignons, gruyere, oeuf, cf]
+  :toppings => [vl, lardons, oignons, gruyere, oeuf, cf]
 )
 
 loossoise = Pizz.create(
   :name => "loossoise",
-  :ingredients => [tomates, oeuf, oignons, gorgonzola, champignons, gruyere]
+  :toppings => [tomates, oeuf, oignons, gorgonzola, champignons, gruyere]
 )
 
 lommoise = Pizz.create(
   :name => "lommoise",
-  :ingredients => [sb, gruyere, oeuf, oignons, merguez]
+  :toppings => [sb, gruyere, oeuf, oignons, merguez]
 )
 
 hawai = Pizz.create(
   :name => "hawaï",
-  :ingredients => [tomates, gruyere, epaule, ananas, cf]
+  :toppings => [tomates, gruyere, epaule, ananas, cf]
 )
 
 wattignisienne = Pizz.create(
   :name => "wattignisienne",
-  :ingredients => [cf, champignons, chorizo, gruyere, oignons, gorgonzola, oeuf]
+  :toppings => [cf, champignons, chorizo, gruyere, oignons, gorgonzola, oeuf]
 )
 
 villeneuveoise = Pizz.create(
   :name => "villeneuveoise",
-  :ingredients => [tomates, chorizo, merguez, oeuf, gruyere, oignons]
+  :toppings => [tomates, chorizo, merguez, oeuf, gruyere, oignons]
 )
 
 armentieroise = Pizz.create(
   :name => "armentieroise",
-  :ingredients => [cf, epaule, champignons, gruyere, oignons, chevre, oeuf]
+  :toppings => [cf, epaule, champignons, gruyere, oignons, chevre, oeuf]
 )
 
 andresienne = Pizz.create(
   :name => "andresienne",
-  :ingredients => [cf, gruyere, gorgonzola, chevre, lardons, oeuf]
+  :toppings => [cf, gruyere, gorgonzola, chevre, lardons, oeuf]
 )
 
 p_stj = Pizz.create(
   :name => "saint jacques",
-  :ingredients => [tomates, stj, gruyere, cf]
+  :toppings => [tomates, stj, gruyere, cf]
 )
 
 p_saumon = Pizz.create(
   :name => "saumon",
-  :ingredients => [tomates, saumon, gruyere, cf ]
+  :toppings => [tomates, saumon, gruyere, cf ]
 )
 
 p_peperoni = Pizz.create(
   :name => "peperoni",
-  :ingredients => [tomates, peperoni, gruyere, oignons]
+  :toppings => [tomates, peperoni, gruyere, oignons]
 )
 
 annappoise = Pizz.create(
   :name => "annappoise",
-  :ingredients => [tomates, epaule, chorizo, parmesan, gorgonzola, oeuf, merguez]
+  :toppings => [tomates, epaule, chorizo, parmesan, gorgonzola, oeuf, merguez]
 )
 
 vegetarienne = Pizz.create(
   :name => "vegetarienne",
-  :ingredients => [tomates, oignons, artichaut, poivrons, olives, champignons, mozzarella]
+  :toppings => [tomates, oignons, artichaut, poivrons, olives, champignons, mozzarella]
 )
 
 sta = Pizz.create(
   :name => "Saint Adrien",
-  :ingredients => [cf, epaule, mozzarella, parmesan, chorizo, merguez, gorgonzola, poivrons]
+  :toppings => [cf, epaule, mozzarella, parmesan, chorizo, merguez, gorgonzola, poivrons]
 )
 
 wattrelosienne = Pizz.create(
   :name => "wattrelosienne",
-  :ingredients => [tomates, chorizo, thon, gruyere, oignons, lardons, merguez, gorgonzola]
+  :toppings => [tomates, chorizo, thon, gruyere, oignons, lardons, merguez, gorgonzola]
 )
-
-puts sta
-puts "nb pizz " + Pizz.all.count.to_s
-
 
 Size.delete_all
 petit = Size.create(
@@ -337,7 +333,7 @@ Price.create(
 Price.create(
   :amount=> 7.6,
   :pizz => pino,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -349,7 +345,7 @@ Price.create(
 Price.create(
   :amount=> 5.6,
   :pizz => reine,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -361,7 +357,7 @@ Price.create(
 Price.create(
   :amount=> 5.9,
   :pizz => marcquoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -373,7 +369,7 @@ Price.create(
 Price.create(
   :amount=> 6.1,
   :pizz => sicilienne,
-  :size => grand 
+  :size => grand
 )
 
 
@@ -386,7 +382,7 @@ Price.create(
 Price.create(
   :amount=> 6.2,
   :pizz => calabrese,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -398,7 +394,7 @@ Price.create(
 Price.create(
   :amount=> 5.2,
   :pizz => p_oignon,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -410,7 +406,7 @@ Price.create(
 Price.create(
   :amount=> 5.4,
   :pizz => jambon,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -422,7 +418,7 @@ Price.create(
 Price.create(
   :amount=> 4.2,
   :pizz => margherita,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -434,7 +430,7 @@ Price.create(
 Price.create(
   :amount=> 7.6,
   :pizz => p_fdm,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -446,7 +442,7 @@ Price.create(
 Price.create(
   :amount=> 6.2,
   :pizz => napolitaine,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -458,7 +454,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => europeenne,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -470,7 +466,7 @@ Price.create(
 Price.create(
   :amount=> 6.4,
   :pizz => p_gorgonzola,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -482,7 +478,7 @@ Price.create(
 Price.create(
   :amount=> 6.6,
   :pizz => capri,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -494,7 +490,7 @@ Price.create(
 Price.create(
   :amount=> 6.6,
   :pizz => p_merguez,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -506,7 +502,7 @@ Price.create(
 Price.create(
   :amount=> 6.5,
   :pizz => hellemmoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -518,7 +514,7 @@ Price.create(
 Price.create(
   :amount=> 5.7,
   :pizz => p_thon,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -530,7 +526,7 @@ Price.create(
 Price.create(
   :amount=> 6.1,
   :pizz => bolognaise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -542,7 +538,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => tourquenoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -554,7 +550,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => tf,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -566,7 +562,7 @@ Price.create(
 Price.create(
   :amount=> 7.6,
   :pizz => p_chevre,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -578,7 +574,7 @@ Price.create(
 Price.create(
   :amount=> 6.7,
   :pizz => toscana,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -590,7 +586,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => savoiardi,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -602,7 +598,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => sa,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -620,7 +616,7 @@ Price.create(
 Price.create(
   :amount=> 6.4,
   :pizz => zio,
-  :size => petit 
+  :size => petit
 )
 
 Price.create(
@@ -632,13 +628,13 @@ Price.create(
 Price.create(
   :amount=> 6.4,
   :pizz => p_maroilles,
-  :size => petit 
+  :size => petit
 )
 
 Price.create(
   :amount=> 7.6,
   :pizz => p_maroilles,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -650,7 +646,7 @@ Price.create(
 Price.create(
   :amount=> 6.7,
   :pizz => carbonara,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -662,7 +658,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => lilloise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -674,7 +670,7 @@ Price.create(
 Price.create(
   :amount=> 6.9,
   :pizz => loossoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -686,7 +682,7 @@ Price.create(
 Price.create(
   :amount=> 7.1,
   :pizz => lommoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -698,7 +694,7 @@ Price.create(
 Price.create(
   :amount=> 6.9,
   :pizz => hawai,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -710,7 +706,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => wattignisienne,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -722,7 +718,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => villeneuveoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -734,7 +730,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => armentieroise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -746,7 +742,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => andresienne,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -758,7 +754,7 @@ Price.create(
 Price.create(
   :amount=> 8.1,
   :pizz => p_stj,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -770,7 +766,7 @@ Price.create(
 Price.create(
   :amount=> 8.1,
   :pizz => p_saumon,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -782,7 +778,7 @@ Price.create(
 Price.create(
   :amount=> 6.7,
   :pizz => p_peperoni,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -794,7 +790,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => annappoise,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -806,7 +802,7 @@ Price.create(
 Price.create(
   :amount=> 6.6,
   :pizz => vegetarienne,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -818,7 +814,7 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => sta,
-  :size => grand 
+  :size => grand
 )
 
 Price.create(
@@ -830,7 +826,5 @@ Price.create(
 Price.create(
   :amount=> 7.9,
   :pizz => wattrelosienne,
-  :size => grand 
+  :size => grand
 )
-
-puts "prices : #{Price.all.count.to_s} " 

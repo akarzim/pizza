@@ -1,12 +1,12 @@
-class AddIngredientsPizzsJoinTable < ActiveRecord::Migration
+class AddToppingsPizzsJoinTable < ActiveRecord::Migration
   def up
-      create_table :ingredients_pizzs, :id => false do |t|
-        t.integer :ingredient_id
+      create_table :toppings_pizzs, :id => false do |t|
+        t.integer :topping_id
         t.integer :pizz_id
       end
   end
 
   def down
-    drop_table :ingredients_pizzs
+    drop_table :toppings_pizzs
   end
 end

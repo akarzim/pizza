@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120311181958) do
+ActiveRecord::Schema.define(:version => 20121020155626) do
 
   create_table "commandes", :force => true do |t|
     t.integer  "user_id"
@@ -24,17 +24,6 @@ ActiveRecord::Schema.define(:version => 20120311181958) do
   add_index "commandes", ["pizz_id"], :name => "index_commandes_on_pizz_id"
   add_index "commandes", ["pizzaparty_id"], :name => "index_commandes_on_pizzaparty_id"
   add_index "commandes", ["user_id"], :name => "index_commandes_on_user_id"
-
-  create_table "ingredients", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "ingredients_pizzs", :id => false, :force => true do |t|
-    t.integer "ingredient_id"
-    t.integer "pizz_id"
-  end
 
   create_table "pizzaparties", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -50,6 +39,11 @@ ActiveRecord::Schema.define(:version => 20120311181958) do
 
   add_index "pizzs", ["ingredients_id"], :name => "index_pizzs_on_ingredients_id"
 
+  create_table "pizzs_toppings", :id => false, :force => true do |t|
+    t.integer "topping_id"
+    t.integer "pizz_id"
+  end
+
   create_table "prices", :force => true do |t|
     t.float    "amount"
     t.datetime "created_at", :null => false
@@ -60,6 +54,12 @@ ActiveRecord::Schema.define(:version => 20120311181958) do
 
   create_table "sizes", :force => true do |t|
     t.string   "label"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "toppings", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -5,7 +5,7 @@ class PizzsController < ApplicationController
 
   def index
     @pizzs = Pizz.includes(
-      :ingredients,
+      :toppings,
     )
     respond_with @pizzs
   end

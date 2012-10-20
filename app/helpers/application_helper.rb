@@ -3,7 +3,7 @@ module ApplicationHelper
   def nav
     {
       :pizzs => { :label => "Pizzas", :url => pizzs_url },
-      :ingredients => { :label => "Ingredients", :url => ingredients_url },
+      :toppings => { :label => "Toppings", :url => toppings_url },
     }
   end
 end

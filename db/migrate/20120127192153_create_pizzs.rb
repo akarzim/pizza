@@ -3,10 +3,10 @@ class CreatePizzs < ActiveRecord::Migration
     create_table :pizzs do |t|
       t.string :name
       t.decimal :price
-      t.references :ingredients
+      t.references :toppings
 
       t.timestamps
     end
-    add_index :pizzs, :ingredients_id
+    add_index :pizzs, :toppings_id
   end
 end

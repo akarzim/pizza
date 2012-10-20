@@ -1,12 +1,12 @@
 # encoding: utf-8
-module IngredientsHelper
+module ToppingsHelper
   def current_nav
-    :ingredients
+    :toppings
   end
 
-  def bon_ingredient?(ingredient)
+  def bon_topping?(topping)
     if @pizz and !@pizz.name.nil? # no sense in testing new users that have no languages
-        @pizz.ingredient.include?(ingredient)
+        @pizz.topping.include?(topping)
     else
         false
     end

@@ -8,7 +8,7 @@ Pizza::Application.routes.draw do
     :commandes,
     :pizzaparties,
     :pizzs,
-    :ingredients,
+    :toppings,
   )
 
   resources :pages, :only => [:index]

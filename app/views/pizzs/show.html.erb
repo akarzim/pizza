@@ -10,8 +10,8 @@
 </p>
 
 
-<div class="label"><%= t("activerecord.attributes.pizz.ingredients_id", :default => t("activerecord.labels.ingredients_id", :default => "Ingredients")) %>:</div>
-<p><%= @pizz.ingredients.collect{|ingredient| ingredient.name }.join(', ') %></p>
+<div class="label"><%= t("activerecord.attributes.pizz.toppings_id", :default => t("activerecord.labels.toppings_id", :default => "Toppings")) %>:</div>
+<p><%= @pizz.toppings.collect{|topping| topping.name }.join(', ') %></p>
 
 <div class="form-actions">
 <%= link_to "Back", pizzs_path, :class => 'btn'  %>
