@@ -1,9 +1,10 @@
 /*
  *= require_self
- *= require formtastic-bootstrap
- *= require font-awesome
+ *= require_tree .
  */
 
+@import formtastic-bootstrap
+@import font-awesome
 @import custom_bootstrap
 @import flags
 
@@ -19,15 +20,26 @@ body, html
   display: none
 
 .navbar
-  .brand
-    padding: 0 1em
-    font-family: serif
-    font-weight: bold
+  .navbar-inner
+    .nav:first-child a:hover
+      color: $blue
 
-    &:first-letter
-      font-size: 1.5em
-      line-height: 1em
+    .brand
+      padding: 0 1em
+      font-family: serif
+      font-weight: bold
 
+      &:hover
+        background-color: transparent
+        color: $blue
+
+      &:first-letter
+        font-size: 1.5em
+        line-height: 1em
+
+footer
+  border-top: 1px dotted #CCC
+  margin-top: 3em
 
 // FIX: Bug for webkit users when we use horizontal-form
 legend

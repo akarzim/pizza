@@ -11,6 +11,8 @@ Pizza::Application.routes.draw do
     :ingredients,
   )
 
+  resources :pages, :only => [:index]
+
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'login' => 'sessions#new', :as => :login
   get 'signup' => 'users#new', :as => :signup
@@ -64,7 +66,8 @@ Pizza::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => redirect("/login")
+  #root :to => redirect("/login")
+  root :to => "pages#index"
 
   # See how all your routes lay out with "rake routes"
 
