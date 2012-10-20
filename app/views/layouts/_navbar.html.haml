@@ -5,9 +5,10 @@
         &pi;zza
 
       .nav-collapse
-        %ul.nav
-          - nav.each do |key, value|
-            %li{class: ("active" if current_nav == key)}= link_to *(value.values)
+        - if logged_in?
+          %ul.nav
+            - nav.each do |key, value|
+              %li{class: ("active" if current_nav == key)}= link_to *(value.values)
 
         %ul.nav.pull-right
           %li.divider-vertical
