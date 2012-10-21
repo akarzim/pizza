@@ -20,7 +20,7 @@ gem "cancan",                                             "~>1.6"
 gem "sass-rails",                                         "~>3.2"
 # gem "ttfunk"
 # gem "prawn"
-# gem 'rb-inotify',                                         '~>0.8'
+gem 'rb-inotify',                                         '~>0.8'
 # gem 'deep_cloneable',                                     '~>1.4'
 # gem "sentient_user",                                      '~>0.3'
 
@@ -35,11 +35,11 @@ end
 
 #group :test, :development do
   # gem "simplecov",                                        require: false
-  # gem "guard"
+  gem "guard"
   # gem "libnotify"
-  # gem "guard-annotate"
-  # gem "guard-test"
-  # gem "guard-bundler"
+  gem "guard-annotate"
+  gem "guard-test"
+  gem "guard-bundler"
   # gem "awesome_print"
   # gem "ruby-prof"
   # gem "railroad"

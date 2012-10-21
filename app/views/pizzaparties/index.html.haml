@@ -1,0 +1,27 @@
+- content_for :title do
+  Pizza Parties
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Created at
+      %th Actions
+  %tbody
+    - @pizzaparties.each do |pizzaparty|
+      %tr
+        %td= pizzaparty.to_s.capitalize
+        %td= pizzaparty.created_at.to_s :short
+        %td
+          .btn-group
+            - if can? :read, pizzaparty
+              = link_to pizzaparty, class: "btn" do
+                %i.icon-eye-open
+            - if can? :update, pizzaparty
+              = link_to edit_pizzaparty_path(pizzaparty), class: "btn" do
+                %i.icon-pencil
+            - if can? :destroy, pizzaparty
+              = link_to pizzaparty, :class => "btn btn-danger", :data => { confirm: 'Are you sure?' }, :method => :delete do
+                %i.icon-trash.icon-white
+
+= link_to_if can?(:create, Pizzaparty), "New Pizzaparty", new_pizzaparty_path, :class => "btn btn-primary"

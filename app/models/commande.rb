@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: commandes
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  pizzaparty_id :integer
+#  pizz_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class Commande < ActiveRecord::Base
   
   # une commande = 1 user, 1 pizz et 1 pizzaparty

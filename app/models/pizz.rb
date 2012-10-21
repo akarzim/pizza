@@ -1,4 +1,15 @@
 # encoding: utf-8
+# == Schema Information
+#
+# Table name: pizzs
+#
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  ingredients_id :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 class Pizz < ActiveRecord::Base
 
   # un ingrédient peut avoir plusieurs pizza et et une pizza peut avoir plusieurs ingrédients
