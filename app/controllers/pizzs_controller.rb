@@ -4,9 +4,7 @@ class PizzsController < ApplicationController
   before_filter :require_login
 
   def index
-    @pizzs = Pizz.includes(
-      :toppings,
-    )
+    @pizzs = @pizzs.includes(:toppings)
     respond_with @pizzs
   end
 

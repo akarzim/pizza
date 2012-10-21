@@ -1,0 +1,27 @@
+- content_for :title do
+  Toppings
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Created at
+      %th Actions
+  %tbody
+    - @toppings.each do |topping|
+      %tr
+        %td= topping.to_s.capitalize
+        %td= topping.created_at.to_s :short
+        %td
+          .btn-group
+            - if can? :read, topping
+              = link_to topping, class: "btn" do
+                %i.icon-eye-open
+            - if can? :update, topping
+              = link_to edit_topping_path(topping), class: "btn" do
+                %i.icon-pencil
+            - if can? :destroy, topping
+              = link_to topping, :class => "btn btn-danger", :data => { confirm: 'Are you sure?' }, :method => :delete do
+                %i.icon-trash.icon-white
+
+= link_to_if can?(:create, Topping), "New Topping", new_topping_path, :class => "btn btn-primary"

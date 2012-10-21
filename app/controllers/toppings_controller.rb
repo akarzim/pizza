@@ -1,10 +1,10 @@
 # encoding: utf-8
 class ToppingsController < ApplicationController
   load_and_authorize_resource
+
   before_filter :require_login
 
   def index
-    @toppings = Topping.all
     respond_with @toppings
   end
 

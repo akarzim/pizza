@@ -5,4 +5,7 @@ class Size < ActiveRecord::Base
 
   attr_accessible :label
 
+  def to_s
+    label
+  end
 end

@@ -21,4 +21,7 @@ class Pizz < ActiveRecord::Base
 
   accepts_nested_attributes_for :prices
 
+  def to_s
+    name
+  end
 end

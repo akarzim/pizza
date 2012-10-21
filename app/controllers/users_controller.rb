@@ -1,88 +1,46 @@
+# encoding: utf-8
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
+  load_and_authorize_resource
+  before_filter :require_login
+
   def index
     @users = User.all
-    #@users = User.accessible_by(current_ability).page(params[:page])
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
+    respond_with @users
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-    #@user = User.accessible_by(current_ability).find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+    respond_with @user
   end
 
-  # GET /users/new
-  # GET /users/new.json
   def new
-    @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
+    respond_with @user
   end
 
-  # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    respond_with @user
   end
 
-  # POST /users
-  # POST /users.json
   def create
-    # prends tous les params accesible de user (attr_accessible), affectation de masse
-    @user = User.new(params[:user])
-    
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      flash[:notice] = 'User was successfully created.'
+    else
+      flash[:alert] = 'Please correct errors below to create a user.'
     end
+    respond_with @user
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-    #@user = User.accessible_by(current_ability).find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update_attributes params[:user]
+      flash[:notice] = 'User has been successfully updated.'
+    else
+      flash[:alert] = 'Please correct errors below to update user.'
     end
+    respond_with @user
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
-    @user = User.find(params[:id])
-    #@user = User.accessible_by(current_ability).find(params[:id])
     @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :ok }
-    end
+    redirect_to users_url
   end
 end

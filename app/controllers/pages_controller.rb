@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       session[:visited_welcome_page] = true
       render
     else
-      redirect_to show_user_url
+      redirect_to current_user
     end
   end
 end
