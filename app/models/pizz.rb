@@ -22,7 +22,7 @@ class Pizz < ActiveRecord::Base
   has_many :commandes
   #has_and_belongs_to_many :commandes
 
-  attr_accessible :name, :toppings
+  attr_accessible :name, :topping_ids, :prices_attributes
 
   # vérifier que le nom est présent
   validates_presence_of :name

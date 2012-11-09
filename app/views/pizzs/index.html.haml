@@ -1,41 +1,71 @@
 - content_for :title do
   Pizza
 
-%table.table.table-bordered.table-striped
-  %thead
-    %tr
-      %th Name
-      %th Size
-      %th Prices
-      %th Created at
-      %th Actions
-  %tbody
-    - @pizzs.each do |pizz|
-      %tr
-        - nb_prices = [pizz.prices.length, 1].max
-        %td{rowspan: nb_prices}= pizz.to_s.capitalize
-        - if pizz.prices.length == 0
-          %td No price
-        - else
-          - pizz.prices.each_with_index do |price, i|
-            - if i != 0
-              ! </tr><tr>
+- @pizzs.each do |pizz|
+  .row
+    .span7
+      .lead
+        =pizz.name.titleize
+        %small= pizz.toppings.collect{|topping| topping.name}.sort.join ', '
 
-            %td= price.size
-            %td= "#{price.amount} €"
+    .span3
+      %dl.dl-horizontal.align-top
+        - pizz.prices.each do |price|
+          %dt= price.size.label.titleize
+          %dd
+            = price.amount
+            €
 
-            - if i == 0
-              %td{rowspan: nb_prices}= pizz.created_at.to_s :short
-              %td{rowspan: nb_prices}
-                .btn-group
-                  - if can? :read, pizz
-                    = link_to pizz, class: "btn" do
-                      %i.icon-eye-open
-                  - if can? :update, pizz
-                    = link_to edit_pizz_path(pizz), class: "btn" do
-                      %i.icon-pencil
-                  - if can? :destroy, pizz
-                    = link_to pizz, :class => "btn btn-danger", :data => { confirm: 'Are you sure?' }, :method => :delete do
-                      %i.icon-trash.icon-white
+    .span2
+      .btn-group
+        - if can? :read, pizz
+          = link_to pizz, class: "btn" do
+            %i.icon-eye-open
+        - if can? :update, pizz
+          = link_to edit_pizz_path(pizz), class: "btn" do
+            %i.icon-pencil
+        - if can? :destroy, pizz
+          = link_to pizz, :class => "btn btn-danger", :data => { confirm: 'Are you sure?' }, :method => :delete do
+            %i.icon-trash.icon-white
+
+
+
+
+-# %table.table.table-bordered.table-striped
+-#   %thead
+-#     %tr
+-#       %th Name
+-#       %th Size
+-#       %th Prices
+-#       %th Created at
+-#       %th Actions
+-#   %tbody
+-#     - @pizzs.each do |pizz|
+-#       %tr
+-#         - nb_prices = [pizz.prices.length, 1].max
+-#         %td{rowspan: nb_prices}= pizz.to_s.capitalize
+-#         - if pizz.prices.length == 0
+-#           %td No price
+-#         - else
+-#           - pizz.prices.each_with_index do |price, i|
+-#             - if i != 0
+-#               ! </tr><tr>
+
+-#             %td= price.size
+-#             %td= "#{price.amount} €"
+
+-#             - if i == 0
+-#               %td{rowspan: nb_prices}= pizz.created_at.to_s :short
+-#               %td{rowspan: nb_prices}
+-#                 .btn-group
+-#                   - if can? :read, pizz
+-#                     = link_to pizz, class: "btn" do
+-#                       %i.icon-eye-open
+-#                   - if can? :update, pizz
+-#                     = link_to edit_pizz_path(pizz), class: "btn" do
+-#                       %i.icon-pencil
+-#                   - if can? :destroy, pizz
+-#                     = link_to pizz, :class => "btn btn-danger", :data => { confirm: 'Are you sure?' }, :method => :delete do
+-#                       %i.icon-trash.icon-white
 
 = link_to_if can?(:create, Pizz), "New Pizz", new_pizz_path, :class => "btn btn-primary"

@@ -1,0 +1,23 @@
+-content_for :title do
+  Pizza
+  = @pizz.name
+
+
+.row
+  .span9
+    %h1= @pizz.name.titleize
+    %p.lead.muted= @pizz.toppings.collect{|topping| topping.name}.sort.join ', '
+
+  .span3
+    %dl.dl-horizontal
+      - @pizz.prices.each do |price|
+        %dt= price.size.label.titleize
+        %dd
+          = price.amount
+          €
+
+.actions
+  - if can? :update, @pizz
+    = link_to 'Edit', edit_pizz_path(@pizz), :class => "btn"
+
+  = link_to 'Back', pizzs_path, :class => "btn btn-primary"

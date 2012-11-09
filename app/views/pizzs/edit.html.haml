@@ -1,0 +1,10 @@
+-content_for :title do
+  Edit Pizza
+  = @pizz.name
+
+= render 'form'
+
+.actions
+  = link_to 'Show', @pizz, :class => "btn"
+
+  = link_to 'Back', pizzs_path, :class => "btn btn-primary"
