@@ -7,7 +7,7 @@ gem "sqlite3",                                            "~>1.3"
 
 gem "haml",                                               "~>3.1"
 gem "sorcery",                                            "~>0.7"
-# gem "foreigner",                                          "~>1.1"
+gem "foreigner",                                          "~>1.1"
 # gem "carrierwave",                                        "~>0.5"
 # gem "mini_magick",                                        "~>3.4"
 gem "paper_trail",                                        "~>2.6"

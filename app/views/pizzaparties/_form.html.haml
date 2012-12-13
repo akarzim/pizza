@@ -1,0 +1,8 @@
+= semantic_form_for @pizzaparty, { html: { class: "form-horizontal" } } do |f|
+  = f.semantic_errors
+  = f.input :started_at
+  = f.input :ended_at
+  = f.input :users, :as => :check_boxes
+
+  = f.actions do
+    = f.action :submit
